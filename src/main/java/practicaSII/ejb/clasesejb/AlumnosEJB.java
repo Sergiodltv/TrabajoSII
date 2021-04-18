@@ -42,7 +42,9 @@ public class AlumnosEJB implements GestionAlumnos{
 		if(expExistente != null) {
 			throw new ExpedienteEncontradoException();
 		}
-		
+		em.persist(alm);
+		exp.setAlumno(alm);
+		em.persist(exp);
 	}
 
 	@Override
@@ -53,8 +55,7 @@ public class AlumnosEJB implements GestionAlumnos{
 		if(alumnoEncontrado == null) {
 			throw new AlumnoNoEncontradoException();
 		}
-		
-		alm = alumnoEncontrado;
+		em.merge(alm);
 		
 	}
 
@@ -67,7 +68,7 @@ public class AlumnosEJB implements GestionAlumnos{
 			throw new AlumnoNoEncontradoException();
 		}
 		
-		em.remove(alm);
+		em.remove(alumnoEncontrado);
 		
 	}
 

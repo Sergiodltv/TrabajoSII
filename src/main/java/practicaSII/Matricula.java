@@ -84,4 +84,7 @@ public class Matricula implements Serializable {
 		this.ListadoAsignaturas = ListadoAsignaturas;
 	}
    
+	public MatriculaPK getId() {
+		return id;
+	}
 }

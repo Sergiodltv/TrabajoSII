@@ -58,4 +58,11 @@ public class Expediente implements Serializable {
 		this.NotaMediaProvisional = NotaMediaProvisional;
 	}
    
+	public Alumno getAlumno() {
+		return al_exp;
+	}
+
+	public void setAlumno(Alumno alumno) {
+		this.al_exp = alumno;
+	}
 }
