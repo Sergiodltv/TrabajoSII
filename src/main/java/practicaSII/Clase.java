@@ -40,5 +40,9 @@ public class Clase implements Serializable {
 	public void setHoraFin(Date HoraFin) {
 		this.HoraFin = HoraFin;
 	}
+	
+	public ClasePK getId() {
+		return id;
+	}
    
 }
