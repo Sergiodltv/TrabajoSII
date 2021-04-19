@@ -1,10 +1,6 @@
 package practicaSII.ejb.clasesejb;
 
-import java.util.Date;
-import java.util.List;
-
 import javax.ejb.Local;
-
 import practicaSII.Matricula;
 import practicaSII.ejb.excetption.MatriculaEncontradaException;
 import practicaSII.ejb.excetption.MatriculaNoEncontradaException;

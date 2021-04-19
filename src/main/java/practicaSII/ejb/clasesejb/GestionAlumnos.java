@@ -7,7 +7,6 @@ import practicaSII.Expediente;
 import practicaSII.ejb.excetption.AlumnoEncontradoException;
 import practicaSII.ejb.excetption.AlumnoNoEncontradoException;
 import practicaSII.ejb.excetption.ExpedienteEncontradoException;
-import practicaSII.ejb.excetption.ExpedienteNoEncontradoException;
 
 @Local
 public interface GestionAlumnos {
