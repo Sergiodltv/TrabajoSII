@@ -1,7 +1,6 @@
 package practicaSII.ejb.clasesejb;
 
 import javax.ejb.Local;
-
 import practicaSII.Alumno;
 import practicaSII.Expediente;
 import practicaSII.ejb.excetption.AlumnoEncontradoException;
@@ -18,6 +17,8 @@ public interface GestionAlumnos {
 	public void modificarAlumno(Alumno alm) throws AlumnoNoEncontradoException;
 	
 	public void eliminarAlumno(Alumno alm) throws AlumnoNoEncontradoException;
+	
+	public Alumno obtenerAlumno(String ID) throws AlumnoNoEncontradoException;
 }
 
 

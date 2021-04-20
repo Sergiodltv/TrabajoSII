@@ -71,5 +71,18 @@ public class AlumnosEJB implements GestionAlumnos{
 		em.remove(alumnoEncontrado);
 		
 	}
+	
+	@Override
+	public Alumno obtenerAlumno(String ID) throws AlumnoNoEncontradoException {
+		// TODO Auto-generated method stub
+		
+		Alumno alumnoEncontrado = em.find(Alumno.class, ID);
+		if(alumnoEncontrado == null) {
+			throw new AlumnoNoEncontradoException();
+		}
+		
+		return alumnoEncontrado;
+		
+	}
 
 }
