@@ -18,9 +18,9 @@ public class Titulacion implements Serializable {
 
 	   
 	@Id @GeneratedValue
-	private Integer Codigo;
-	private String Nombre;
-	private Integer Creditos;
+	private Integer codigo;
+	private String nombre;
+	private Integer creditos;
 	private static final long serialVersionUID = 1L;
 	
 	@OneToMany (mappedBy = "as_titul")
@@ -36,27 +36,35 @@ public class Titulacion implements Serializable {
 
 	public Titulacion() {
 		super();
-	}   
+	}
+	
+	public Titulacion(Integer codigo, String nombre, Integer creditos ) {
+		super();
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.creditos = creditos;
+	}
+	
 	public Integer getCodigo() {
-		return this.Codigo;
+		return this.codigo;
 	}
 
 	public void setCodigo(Integer Codigo) {
-		this.Codigo = Codigo;
+		this.codigo = Codigo;
 	}   
 	public String getNombre() {
-		return this.Nombre;
+		return this.nombre;
 	}
 
 	public void setNombre(String Nombre) {
-		this.Nombre = Nombre;
+		this.nombre = Nombre;
 	}   
 	public Integer getCreditos() {
-		return this.Creditos;
+		return this.creditos;
 	}
 
 	public void setCreditos(Integer Creditos) {
-		this.Creditos = Creditos;
+		this.creditos = Creditos;
 	}
    
 }
