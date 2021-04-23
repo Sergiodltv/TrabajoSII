@@ -25,16 +25,6 @@ public class PasEJB implements GestionPas {
 		em.persist(pas);
 	}
 
-	@Override
-	public void modificarPas(Pas pas) throws PasNoEncontradoException {
-		// TODO Auto-generated method stub
-		
-		Pas pasEntity = em.find(Pas.class, pas.getID());
-		if (pasEntity != null) {
-			throw new PasNoEncontradoException();
-		}
-		em.merge(pas);
-	}
 
 	@Override
 	public void eliminarPas(Pas pas) throws PasNoEncontradoException {

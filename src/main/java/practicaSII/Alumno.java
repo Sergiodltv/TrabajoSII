@@ -28,7 +28,7 @@ public class Alumno implements Serializable {
 	private String Apellido2;
 	@Column (name = "email_institucional", nullable = false)
 	private String EmailInstitucional;
-	private short EmailPersonal;
+	private String EmailPersonal;
 	private Integer Telefono;
 	private Integer Movil;
 	private String Direccion;
@@ -89,11 +89,11 @@ public class Alumno implements Serializable {
 	public void setEmailInstitucional(String EmailInstitucional) {
 		this.EmailInstitucional = EmailInstitucional;
 	}   
-	public short getEmailPersonal() {
+	public String getEmailPersonal() {
 		return this.EmailPersonal;
 	}
 
-	public void setEmailPersonal(short EmailPersonal) {
+	public void setEmailPersonal(String EmailPersonal) {
 		this.EmailPersonal = EmailPersonal;
 	}   
 	public Integer getTelefono() {
