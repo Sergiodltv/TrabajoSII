@@ -53,23 +53,6 @@ public class Asignatura implements Serializable {
 		this.Ingles = ingles;
 	}
 	
-	public Asignatura(Integer referencia, Integer codigo, Integer tc, Integer cpr,
-			Integer cteo, String ofertada, String nombre, Integer curso, String plazas,
-			String duracion) {
-		super();
-		this.Referencia = referencia;
-		this.Codigo = codigo;
-		this.TotalCreditos = tc;
-		this.CreditosPr = cpr;
-		this.CreditosTeo = cteo;
-		this.Ofertada = ofertada;
-		this.Nombre = nombre;
-		this.Curso = curso;
-		this.Plazas = plazas;
-		this.Duracion = duracion;
-
-	}
-	
 	@ManyToOne
 	@JoinColumn(nullable = false)
 	private Titulacion as_titul;

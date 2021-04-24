@@ -28,6 +28,8 @@ public class ImportarAsignaturaEJB {
 		try {
 			FileInputStream excel = new FileInputStream(new File(fichero));
 			Workbook wk = new XSSFWorkbook(excel);
+			Sheet sheet2 = wk.getSheetAt(2);
+			
 			Sheet sheet5 = wk.getSheetAt(5);
 			Iterator<Row> it = sheet5.iterator();
 			it.next();
@@ -43,15 +45,13 @@ public class ImportarAsignaturaEJB {
 				Integer curso = new Integer ((int)current.getCell(5).getNumericCellValue());
 				String duracion = current.getCell(9).getStringCellValue();
 				String plazas = current.getCell(10).getStringCellValue();
-				//String ingles = current.getCell(11).getStringCellValue();
+				String ingles = current.getCell(11).getStringCellValue();
 				
-				Asignatura asignatura = new Asignatura(referencia, cod, totalcred, credPr,credTeo,ofer,nombre,curso,duracion,plazas);
+				Asignatura asignatura = new Asignatura(referencia, cod, totalcred, credPr,credTeo,ofer,nombre,curso,duracion,plazas,ingles);
 				
 			}
 			
-			Sheet sheet2 = wk.getSheetAt(2);
-			it = sheet2.iterator();
-			it.next();
+			
 			
 		}catch (FileNotFoundException e) {
 			
@@ -61,4 +61,41 @@ public class ImportarAsignaturaEJB {
 		
 		//}
 	}
+	
+	public void insertarGII() {
+		try {
+			FileInputStream excel = new FileInputStream(new File(fichero));
+			Workbook wk = new XSSFWorkbook(excel);
+			Sheet sheet2 = wk.getSheetAt(2);
+			Iterator<Row> it = sheet2.iterator();
+			it.next();
+		
+			while(it.hasNext()) {
+				Row current = it.next();
+				Integer referencia = new Integer ((int)current.getCell(0).getNumericCellValue());
+				Integer cod = new Integer ((int)current.getCell(2).getNumericCellValue());
+				Integer totalcred = new Integer ((int)current.getCell(8).getNumericCellValue());
+				Integer credPr = new Integer ((int)current.getCell(7).getNumericCellValue());
+				Integer credTeo = new Integer ((int)current.getCell(6).getNumericCellValue());
+				String ofer = current.getCell(1).getStringCellValue();
+				String nombre = current.getCell(4).getStringCellValue();
+				Integer curso = new Integer ((int)current.getCell(5).getNumericCellValue());
+				String duracion = current.getCell(9).getStringCellValue();
+				String plazas = current.getCell(10).getStringCellValue();
+				String ingles = current.getCell(11).getStringCellValue();
+			
+				Asignatura asignatura = new Asignatura(referencia, cod, totalcred, credPr,credTeo,ofer,nombre,curso,duracion,plazas,ingles);	
+		}
+		
+		
+		
+	}catch (FileNotFoundException e) {
+		
+	}catch (IOException e) {
+		
+	}//catch (AsignaturaEncontradaException e) {
+	
+	//}
+	}
+
 }
