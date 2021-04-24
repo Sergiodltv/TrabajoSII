@@ -172,5 +172,10 @@ public class Asignatura implements Serializable {
 	}
 
 	
-   
+  	@Override
+	public boolean equals(Object obj) {
+		boolean esAsig = obj instanceof Asignatura;
+		Asignatura asig = (Asignatura)obj;
+		return esAsig && asig.getReferencia().equals(Referencia);
+	}
 }

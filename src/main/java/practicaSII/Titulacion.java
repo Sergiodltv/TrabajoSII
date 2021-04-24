@@ -66,5 +66,11 @@ public class Titulacion implements Serializable {
 	public void setCreditos(Integer Creditos) {
 		this.creditos = Creditos;
 	}
-   
+   	
+	@Override
+	public boolean equals(Object obj) {
+		boolean esTitu = obj instanceof Titulacion;
+		Titulacion titu = (Titulacion)obj;
+		return esTitu && titu.getCodigo().equals(codigo);
+	}
 }

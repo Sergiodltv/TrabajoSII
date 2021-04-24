@@ -139,4 +139,11 @@ public class Expediente implements Serializable {
 	public void anyadirMatricula(Matricula mat){
 		exp_mt.add(mat);
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		boolean esExpediente = obj instanceof Expediente;
+		Expediente exp = (Expediente)obj;
+		return esExpediente && exp.getNumExpediente().equals(numExpediente);
+	}
 }

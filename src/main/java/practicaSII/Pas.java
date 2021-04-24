@@ -101,5 +101,12 @@ public class Pas implements Serializable {
 	public void setDireccion(String Direccion) {
 		this.Direccion = Direccion;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		boolean esPas = obj instanceof Pas;
+		Pas pas = (Pas)obj;
+		return esPas && pas.getID().equals(ID);
+	}
    
 }

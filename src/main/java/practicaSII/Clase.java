@@ -45,4 +45,10 @@ public class Clase implements Serializable {
 		return id;
 	}
    
+	@Override
+	public boolean equals(Object obj) {
+		boolean esClase = obj instanceof Clase;
+		Clase clase = (Clase)obj;
+		return esClase && clase.getId().equals(id);
+	}
 }

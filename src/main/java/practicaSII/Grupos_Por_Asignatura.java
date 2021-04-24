@@ -44,5 +44,16 @@ public class Grupos_Por_Asignatura implements Serializable {
 	public void setOferta(Boolean Oferta) {
 		this.Oferta = Oferta;
 	}
+
+	public Grupo_Por_AsignaturaPK getId() {
+		return id;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		boolean esGpa = obj instanceof Centro;
+		Grupos_Por_Asignatura gpa = (Grupos_Por_Asignatura)obj;
+		return esGpa && gpa.getId().equals(id);
+	}
    
 }

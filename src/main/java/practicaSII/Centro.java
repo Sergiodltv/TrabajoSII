@@ -62,4 +62,10 @@ public class Centro implements Serializable {
 		this.TelefonoConserjeria = TelefonoConsergeria;
 	}
    
+	@Override
+	public boolean equals(Object obj) {
+		boolean esCentro = obj instanceof Centro;
+		Centro centro = (Centro)obj;
+		return esCentro && centro.getID().equals(ID);
+	}
 }

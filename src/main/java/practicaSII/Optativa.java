@@ -48,5 +48,12 @@ public class Optativa implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		boolean esOpt = obj instanceof Optativa;
+		Optativa opt = (Optativa)obj;
+		return esOpt && opt.getOpt_asig().equals(opt_asig);
+	}
    
 }

@@ -121,4 +121,10 @@ public class Grupo implements Serializable {
 		this.Contrasenya = Contrasenya;
 	}
    
+	@Override
+	public boolean equals(Object obj) {
+		boolean esGrupo = obj instanceof Grupo;
+		Grupo grupo = (Grupo)obj;
+		return esGrupo && grupo.getID().equals(ID);
+	}
 }

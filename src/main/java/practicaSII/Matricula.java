@@ -96,4 +96,11 @@ public class Matricula implements Serializable {
 	public MatriculaPK getId() {
 		return id;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		boolean esMat = obj instanceof Matricula;
+		Matricula mat = (Matricula)obj;
+		return esMat && mat.getId().equals(id);
+	}
 }

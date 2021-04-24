@@ -36,5 +36,11 @@ public class Encuesta implements Serializable {
 	public void setFechaEnvio(Date FechaEnvio) {
 		this.FechaEnvio = FechaEnvio;
 	}
-   
+   	
+	@Override
+	public boolean equals(Object obj) {
+		boolean esEncuesta = obj instanceof Encuesta;
+		Encuesta encuesta = (Encuesta)obj;
+		return esEncuesta && encuesta.getFechaEnvio().equals(FechaEnvio);
+	}
 }

@@ -41,6 +41,7 @@ public class Grupo_Por_AsignaturaPK  implements Serializable{
 		public int hashCode() {
 			return cursoAcademico.hashCode() + gr_fk.hashCode() + asi_fk.hashCode();
 		}
+
 }
 		
 
