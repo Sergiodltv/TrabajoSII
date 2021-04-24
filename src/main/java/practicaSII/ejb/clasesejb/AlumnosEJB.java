@@ -54,7 +54,7 @@ public class AlumnosEJB implements GestionAlumnos{
 	}
 	
 	@Override
-	public Alumno obtenerAlumno(String id) throws AlumnoNoEncontradoException {
+	public Alumno obtenerAlumno(Integer id) throws AlumnoNoEncontradoException {
 		// TODO Auto-generated method stub
 		
 		Alumno alumnoEncontrado = em.find(Alumno.class, id);

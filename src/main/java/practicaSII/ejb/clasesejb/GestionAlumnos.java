@@ -16,7 +16,7 @@ public interface GestionAlumnos {
 	
 	public void eliminarAlumno(Alumno alm) throws AlumnoNoEncontradoException;
 	
-	public Alumno obtenerAlumno(String ID) throws AlumnoNoEncontradoException;
+	public Alumno obtenerAlumno(Integer ID) throws AlumnoNoEncontradoException;
 }
 
 

@@ -11,6 +11,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import practicaSII.Alumno;
+import practicaSII.Expediente;
 
 
 
@@ -35,6 +36,11 @@ public class BaseDatos {
 		a1.setDireccion("dirección");
 		
 		em.persist(a1);
+		
+		Expediente exp1 = new Expediente();
+		exp1.setNumExpediente(1);
+		
+		em.persist(exp1);
 		
 		/*
 		Ingrediente carne = new Ingrediente ("Carne picada");
