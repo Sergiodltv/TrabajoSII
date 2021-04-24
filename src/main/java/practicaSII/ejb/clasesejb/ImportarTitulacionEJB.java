@@ -39,6 +39,8 @@ public class ImportarTitulacionEJB {
 				ejb.anadirTitulacion(tl);
 			}
 			
+			wk.close();
+			
 		}catch (FileNotFoundException e) {
 			
 		}catch (IOException e) {

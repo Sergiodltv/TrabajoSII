@@ -53,5 +53,6 @@
 	<classpathentry kind="lib" path="/home/alumno/Descargas/poi-bin-5.0.0-20210120/poi-5.0.0/auxiliary/xml-apis-ext-1.3.04.jar"/>
 	<classpathentry kind="lib" path="/home/alumno/Descargas/poi-bin-5.0.0-20210120/poi-5.0.0/auxiliary/xmlgraphics-commons-2.4.jar"/>
 	<classpathentry kind="lib" path="/home/alumno/Descargas/poi-bin-5.0.0-20210120/poi-5.0.0/auxiliary/xmlsec-2.2.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -16,23 +16,59 @@ import javax.persistence.*;
 
 public class Asignatura implements Serializable {
 
-	@Id @GeneratedValue
+	@Id
 	private Integer Referencia;
 	@Column(name = "codigo", nullable = false)
 	private Integer Codigo;
-	@Column (name = "creditos", nullable = false)
-	private Integer Creditos;
+	@Column (name = "totalcreditos", nullable = false)
+	private Integer TotalCreditos;
+	@Column (name = "creditospr", nullable = false)
+	private Integer CreditosPr;
+	@Column (name = "creditosteo", nullable = false)
+	private Integer CreditosTeo;
 	@Column (name = "ofertada", nullable = false)
-	private Boolean Ofertada;
+	private String Ofertada;
 	@Column (name = "nombre", nullable = false)
 	private String Nombre;
-	private String Curso;
-	private String Caracter;
+	private Integer Curso;
+	private String Plazas;
 	private String Duracion;
-	private Integer UnidadTemporal;
-	@Column (name = "ingles", nullable = false)
-	private Boolean Ingles;
+	private String Ingles;
 	private static final long serialVersionUID = 1L;
+	
+	public Asignatura(Integer referencia, Integer codigo, Integer tc, Integer cpr,
+			Integer cteo, String ofertada, String nombre, Integer curso, String plazas,
+			String duracion, String ingles) {
+		super();
+		this.Referencia = referencia;
+		this.Codigo = codigo;
+		this.TotalCreditos = tc;
+		this.CreditosPr = cpr;
+		this.CreditosTeo = cteo;
+		this.Ofertada = ofertada;
+		this.Nombre = nombre;
+		this.Curso = curso;
+		this.Plazas = plazas;
+		this.Duracion = duracion;
+		this.Ingles = ingles;
+	}
+	
+	public Asignatura(Integer referencia, Integer codigo, Integer tc, Integer cpr,
+			Integer cteo, String ofertada, String nombre, Integer curso, String plazas,
+			String duracion) {
+		super();
+		this.Referencia = referencia;
+		this.Codigo = codigo;
+		this.TotalCreditos = tc;
+		this.CreditosPr = cpr;
+		this.CreditosTeo = cteo;
+		this.Ofertada = ofertada;
+		this.Nombre = nombre;
+		this.Curso = curso;
+		this.Plazas = plazas;
+		this.Duracion = duracion;
+
+	}
 	
 	@ManyToOne
 	@JoinColumn(nullable = false)
@@ -67,18 +103,30 @@ public class Asignatura implements Serializable {
 	public void setCodigo(Integer Codigo) {
 		this.Codigo = Codigo;
 	}   
-	public Integer getCreditos() {
-		return this.Creditos;
+	public Integer getCreditosTotales() {
+		return this.TotalCreditos;
 	}
 
-	public void setCreditos(Integer Creditos) {
-		this.Creditos = Creditos;
-	}   
-	public Boolean getOfertada() {
+	public void setCreditosTotales(Integer Creditos) {
+		this.TotalCreditos = Creditos;
+	}
+	public Integer getCreditosPr() {
+		return CreditosPr;
+	}
+	public void setCreditosPr(Integer creditosPr) {
+		CreditosPr = creditosPr;
+	}
+	public Integer getCreditosTeo() {
+		return CreditosTeo;
+	}
+	public void setCreditosTeo(Integer creditosTeo) {
+		CreditosTeo = creditosTeo;
+	}
+	public String getOfertada() {
 		return this.Ofertada;
 	}
 
-	public void setOfertada(Boolean Ofertada) {
+	public void setOfertada(String Ofertada) {
 		this.Ofertada = Ofertada;
 	}   
 	public String getNombre() {
@@ -88,19 +136,19 @@ public class Asignatura implements Serializable {
 	public void setNombre(String Nombre) {
 		this.Nombre = Nombre;
 	}   
-	public String getCurso() {
+	public Integer getCurso() {
 		return this.Curso;
 	}
 
-	public void setCurso(String Curso) {
+	public void setCurso(Integer Curso) {
 		this.Curso = Curso;
 	}   
-	public String getCaracter() {
-		return this.Caracter;
+	public String getPlazas() {
+		return this.Plazas;
 	}
 
-	public void setCaracter(String Caracter) {
-		this.Caracter = Caracter;
+	public void setPlazas(String Caracter) {
+		this.Plazas = Caracter;
 	}   
 	public String getDuracion() {
 		return this.Duracion;
@@ -109,26 +157,15 @@ public class Asignatura implements Serializable {
 	public void setDuracion(String Duracion) {
 		this.Duracion = Duracion;
 	}   
-	public Integer getUnidad_temporal() {
-		return this.UnidadTemporal;
-	}
-
-	public void setUnidad_temporal(Integer Unidad_temporal) {
-		this.UnidadTemporal = Unidad_temporal;
-	}   
-	public Boolean getIngles() {
+	  
+	public String getIngles() {
 		return this.Ingles;
 	}
 
-	public void setIngles(Boolean Ingles) {
+	public void setIngles(String Ingles) {
 		this.Ingles = Ingles;
 	}
-	public Integer getUnidadTemporal() {
-		return UnidadTemporal;
-	}
-	public void setUnidadTemporal(Integer unidadTemporal) {
-		UnidadTemporal = unidadTemporal;
-	}
+	
 	public Titulacion getAs_titul() {
 		return as_titul;
 	}
