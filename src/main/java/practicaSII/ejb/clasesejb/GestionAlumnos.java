@@ -12,8 +12,6 @@ public interface GestionAlumnos {
 
 	public void anadirAlumnoMatr(Alumno alm) throws AlumnoEncontradoException;
 	
-	public void anadirAlumnoNuevo(Alumno alm, Expediente exp) throws AlumnoEncontradoException, ExpedienteEncontradoException;
-	
 	public void modificarAlumno(Alumno alm) throws AlumnoNoEncontradoException;
 	
 	public void eliminarAlumno(Alumno alm) throws AlumnoNoEncontradoException;

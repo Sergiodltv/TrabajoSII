@@ -75,7 +75,7 @@ public class Alumno implements Serializable {
 		return this.dni;
 	}
 
-	public void setDni(String DNI) {
+	public void setDni(String dni) {
 		this.dni = dni;
 	}   
 	public String getContrasenya() {
@@ -142,6 +142,14 @@ public class Alumno implements Serializable {
 		this.direccion = Direccion;
 	}
 	
-
+	public void anyadirExpediente(Expediente exp) {
+		expAlum.add(exp);
+	}
+	
+	public boolean equals(Object obj) {
+		boolean esAlumno = obj instanceof Alumno;
+		Alumno alum = (Alumno)obj;
+		return esAlumno && this.id.equals(alum.getId());
+	}
    
 }

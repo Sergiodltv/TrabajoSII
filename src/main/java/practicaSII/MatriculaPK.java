@@ -9,6 +9,14 @@ public class MatriculaPK implements Serializable{
 	private String cursoAcademico;
 	private Integer exp_fk;
 	
+	public MatriculaPK() {
+	}
+	
+	public MatriculaPK(String cursoAcademico, Integer exp_fk) {
+		this.cursoAcademico = cursoAcademico;
+		this.exp_fk = exp_fk;
+	}
+	
 	public String getCursoAcademico() {
 		return cursoAcademico;
 	}

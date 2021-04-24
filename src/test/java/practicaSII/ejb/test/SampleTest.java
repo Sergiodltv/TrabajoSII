@@ -86,11 +86,7 @@ public class SampleTest {
 		Expediente exp = new Expediente();
 		exp.setNumExpediente(1);
 		
-		try {
-			gestionAlumnos.anadirAlumnoNuevo(a1, exp);
-		}catch (AlumnoEncontradoException|ExpedienteEncontradoException e) {
-			fail("Lanzó error al insertar");
-		}
+		
 		
 	}
 	

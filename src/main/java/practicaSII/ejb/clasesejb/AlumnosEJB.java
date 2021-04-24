@@ -29,25 +29,6 @@ public class AlumnosEJB implements GestionAlumnos{
 	}
 
 	@Override
-	public void anadirAlumnoNuevo(Alumno alm, Expediente exp)
-			throws AlumnoEncontradoException, ExpedienteEncontradoException {
-		// TODO Auto-generated method stub
-		
-		Alumno alumnoExistente = em.find(Alumno.class, alm.getId());
-		if(alumnoExistente != null) {
-			throw new AlumnoEncontradoException();
-		}
-		
-		Expediente expExistente = em.find(Expediente.class, exp.getNumExpediente());
-		if(expExistente != null) {
-			throw new ExpedienteEncontradoException();
-		}
-		em.persist(alm);
-		exp.setAlumno(alm);
-		em.persist(exp);
-	}
-
-	@Override
 	public void modificarAlumno(Alumno alm) throws AlumnoNoEncontradoException {
 		// TODO Auto-generated method stub
 		

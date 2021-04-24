@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.*;
@@ -21,13 +21,13 @@ public class Matricula implements Serializable {
 	@EmbeddedId
 	private MatriculaPK id;
 	@Column (name = "estado", nullable = false)
-	private Boolean Estado;
-	@Column (name = "fecha_matricula", nullable = false) @Temporal (TemporalType.DATE)
-	private Date FechaMatricula;
-	private Integer NumArchivo;
-	private String TurnoPreferente;
-	private Boolean NuevoIngreso;
-	private String ListadoAsignaturas;
+	private Boolean estado;
+	@Column (name = "fecha_matricula", nullable = false) 
+	private String fechaMatricula;
+	private Integer numArchivo;
+	private String turnoPreferente;
+	private Boolean nuevoIngreso;
+	private String gruposAsignados;
 	private static final long serialVersionUID = 1L;
 	
 	@MapsId("exp_fk")
@@ -38,51 +38,60 @@ public class Matricula implements Serializable {
 		super();
 	}   
 	
+	
+	
+	public Matricula(MatriculaPK id, Boolean estado, String fechaMatricula, Integer numArchivo, String turnoPreferente, 
+			Expediente mt_exp, String gruposAsignados) {
+		super();
+		this.id = id;
+		this.estado = estado;
+		this.fechaMatricula = fechaMatricula;
+		this.numArchivo = numArchivo;
+		this.turnoPreferente = turnoPreferente;
+		this.mt_exp = mt_exp;
+		this.gruposAsignados = gruposAsignados;
+	}
+
+
+
 	@OneToMany(mappedBy ="asigmt_mt")
 	private List<Asig_Matricula> mt_asigmt;
 	 
 	public Boolean getEstado() {
-		return this.Estado;
+		return this.estado;
 	}
 
-	public void setEstado(Boolean Estado) {
-		this.Estado = Estado;
+	public void setEstado(Boolean estado) {
+		this.estado = estado;
 	}   
-	public Date getFechaMatricula() {
-		return this.FechaMatricula;
+	public String getFechaMatricula() {
+		return this.fechaMatricula;
 	}
 
-	public void setFechaMatricula(Date FechaMatricula) {
-		this.FechaMatricula = FechaMatricula;
+	public void setFechaMatricula(String fechaMatricula) {
+		this.fechaMatricula = fechaMatricula;
 	}   
 	public Integer getNumArchivo() {
-		return this.NumArchivo;
+		return this.numArchivo;
 	}
 
-	public void setNumArchivo(Integer NumArchivo) {
-		this.NumArchivo = NumArchivo;
+	public void setNumArchivo(Integer numArchivo) {
+		this.numArchivo = numArchivo;
 	}   
 	public String getTurnoPreferido() {
-		return this.TurnoPreferente;
+		return this.turnoPreferente;
 	}
 
-	public void setTurnoPreferido(String TurnoPreferido) {
-		this.TurnoPreferente = TurnoPreferido;
+	public void setTurnoPreferido(String turnoPreferido) {
+		this.turnoPreferente = turnoPreferido;
 	}   
 	public Boolean getNuevoIngreso() {
-		return this.NuevoIngreso;
+		return this.nuevoIngreso;
 	}
 
-	public void setNuevoIngreso(Boolean NuevoIngreso) {
-		this.NuevoIngreso = NuevoIngreso;
+	public void setNuevoIngreso(Boolean nuevoIngreso) {
+		this.nuevoIngreso = nuevoIngreso;
 	}   
-	public String getListadoAsignaturas() {
-		return this.ListadoAsignaturas;
-	}
-
-	public void setListadoAsignaturas(String ListadoAsignaturas) {
-		this.ListadoAsignaturas = ListadoAsignaturas;
-	}
    
 	public MatriculaPK getId() {
 		return id;
