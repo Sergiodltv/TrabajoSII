@@ -36,15 +36,14 @@ public class ImportarTitulacionEJB {
 				String nombre = current.getCell(1).getStringCellValue();
 				Integer creditos = new Integer((int)current.getCell(2).getNumericCellValue());
 				Titulacion tl = new Titulacion(codigo, nombre, creditos);
-				System.out.println(codigo.toString() + " " + nombre + " " + creditos.toString());
-				//ejb.anadirTitulacion(tl);
+				ejb.anadirTitulacion(tl);
 			}
 			
 		}catch (FileNotFoundException e) {
 			
 		}catch (IOException e) {
 			
-		//}catch (TitulacionEncontradaException e) {
+		}catch (TitulacionEncontradaException e) {
 		
 		}
 	}

@@ -16,22 +16,25 @@ public class Alumno implements Serializable {
 
 
 	@Id @GeneratedValue
-	private String ID;
+	private Integer id;
 	@Column (name = "dni", nullable = false, unique = true)
-	private String DNI;
+	private String dni;
 	@Column (name = "contrasenya", nullable = false)
-	private String Contrasenya;
+	private String contrasenya;
 	@Column (name = "nombre", nullable = false)
-	private String Nombre;
+	private String nombre;
 	@Column (name = "apellido_1", nullable = false)
-	private String Apellido1;
-	private String Apellido2;
+	private String apellido1;
+	private String apellido2;
 	@Column (name = "email_institucional", nullable = false)
-	private String EmailInstitucional;
-	private String EmailPersonal;
-	private Integer Telefono;
-	private Integer Movil;
-	private String Direccion;
+	private String emailInstitucional;
+	private String emailPersonal;
+	private Integer telefono;
+	private Integer movil;
+	private String direccion;
+	private String localidad;
+	private String provincia;
+	private Integer codigoPostal;
 	private static final long serialVersionUID = 1L;
 	
 	@OneToMany (mappedBy = "al_exp")
@@ -39,83 +42,104 @@ public class Alumno implements Serializable {
 
 	public Alumno() {
 		super();
-	}   
-	public String getID() {
-		return this.ID;
+	}
+	
+	public Alumno(String dni,String nombre, String apellido1, String apellido2,
+			String emailInstitucional, String emailPersonal, Integer telefono, Integer movil, String direccion,
+			String localidad, String provincia, Integer codigoPostal) {
+		super();
+		this.dni = dni;
+		this.nombre = nombre;
+		this.apellido1 = apellido1;
+		this.apellido2 = apellido2;
+		this.emailInstitucional = emailInstitucional;
+		this.emailPersonal = emailPersonal;
+		this.telefono = telefono;
+		this.movil = movil;
+		this.direccion = direccion;
+		this.localidad = localidad;
+		this.provincia = provincia;
+		this.codigoPostal = codigoPostal;
 	}
 
-	public void setID(String ID) {
-		this.ID = ID;
-	}   
-	public String getDNI() {
-		return this.DNI;
+
+
+	public Integer getId() {
+		return this.id;
 	}
 
-	public void setDNI(String DNI) {
-		this.DNI = DNI;
+	public void setId(Integer id) {
+		this.id = id;
+	}   
+	public String getDni() {
+		return this.dni;
+	}
+
+	public void setDni(String DNI) {
+		this.dni = dni;
 	}   
 	public String getContrasenya() {
-		return this.Contrasenya;
+		return this.contrasenya;
 	}
 
 	public void setContrasenya(String Contrasenya) {
-		this.Contrasenya = Contrasenya;
+		this.contrasenya = Contrasenya;
 	}   
 	public String getNombre() {
-		return this.Nombre;
+		return this.nombre;
 	}
 
 	public void setNombre(String Nombre) {
-		this.Nombre = Nombre;
+		this.nombre = Nombre;
 	}   
 	public String getApellido1() {
-		return this.Apellido1;
+		return this.apellido1;
 	}
 
 	public void setApellido1(String Apellido1) {
-		this.Apellido1 = Apellido1;
+		this.apellido1 = Apellido1;
 	}   
 	public String getApellido2() {
-		return this.Apellido2;
+		return this.apellido2;
 	}
 
 	public void setApellido2(String Apellido2) {
-		this.Apellido2 = Apellido2;
+		this.apellido2 = Apellido2;
 	}   
 	public String getEmailInstitucional() {
-		return this.EmailInstitucional;
+		return this.emailInstitucional;
 	}
 
 	public void setEmailInstitucional(String EmailInstitucional) {
-		this.EmailInstitucional = EmailInstitucional;
+		this.emailInstitucional = EmailInstitucional;
 	}   
 	public String getEmailPersonal() {
-		return this.EmailPersonal;
+		return this.emailPersonal;
 	}
 
 	public void setEmailPersonal(String EmailPersonal) {
-		this.EmailPersonal = EmailPersonal;
+		this.emailPersonal = EmailPersonal;
 	}   
 	public Integer getTelefono() {
-		return this.Telefono;
+		return this.telefono;
 	}
 
 	public void setTelefono(Integer Telefono) {
-		this.Telefono = Telefono;
+		this.telefono = Telefono;
 	}   
 	public Integer getMovil() {
-		return this.Movil;
+		return this.movil;
 	}
 
 	public void setMovil(Integer Movil) {
-		this.Movil = Movil;
+		this.movil = Movil;
 	}   
 	public String getDireccion() {
-		return this.Direccion;
+		return this.direccion;
 	}
 
 	public void setDireccion(String Direccion) {
-		this.Direccion = Direccion;
+		this.direccion = Direccion;
 	}
 	
 
