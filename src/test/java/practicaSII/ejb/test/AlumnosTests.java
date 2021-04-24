@@ -198,7 +198,7 @@ public class AlumnosTests {
 	
 	@Test
 	public void obtenerAlumnoNoEncontrado() {
-		Integer id2 = 1;
+		Integer id2 = 2;
 		
 		try {
 			gestionAlumnos.obtenerAlumno(id2);

@@ -44,6 +44,10 @@ public class Clase implements Serializable {
 	public ClasePK getId() {
 		return id;
 	}
+	
+	public void setId(ClasePK id) {
+		this.id = id;
+	}
    
 	@Override
 	public boolean equals(Object obj) {

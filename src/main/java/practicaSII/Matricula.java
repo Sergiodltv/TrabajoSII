@@ -96,6 +96,10 @@ public class Matricula implements Serializable {
 	public MatriculaPK getId() {
 		return id;
 	}
+	
+	public void setId(MatriculaPK mpk) {
+		id = mpk;
+	}
 
 	@Override
 	public boolean equals(Object obj) {
