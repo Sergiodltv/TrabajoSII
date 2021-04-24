@@ -14,8 +14,8 @@ import javax.persistence.*;
 public class Optativa implements Serializable {
 
 	@Column (name = "plazas", nullable = false)
-	private Integer Plazas;
-	private String Mencion;
+	private Integer plazas;
+	private String mencion;
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -24,20 +24,28 @@ public class Optativa implements Serializable {
 
 	public Optativa() {
 		super();
-	}   
+	}
+	
+	public Optativa(Asignatura asignatura,Integer plazas,String mencion) {
+		super();
+		this.opt_asig = asignatura;
+		this.plazas = plazas;
+		this.mencion = mencion; 
+	}
+	
 	public Integer getPlazas() {
-		return this.Plazas;
+		return this.plazas;
 	}
 
 	public void setPlazas(Integer Plazas) {
-		this.Plazas = Plazas;
+		this.plazas = Plazas;
 	}   
 	public String getMencion() {
-		return this.Mencion;
+		return this.mencion;
 	}
 
 	public void setMencion(String Mencion) {
-		this.Mencion = Mencion;
+		this.mencion = Mencion;
 	}
 	public Asignatura getOpt_asig() {
 		return opt_asig;
@@ -48,12 +56,10 @@ public class Optativa implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
-	@Override
-	public boolean equals(Object obj) {
-		boolean esOpt = obj instanceof Optativa;
-		Optativa opt = (Optativa)obj;
-		return esOpt && opt.getOpt_asig().equals(opt_asig);
+	public Asignatura getAsignatura() {
+		return opt_asig;
 	}
-   
+	public void setAsignatura(Asignatura asig) {
+		this.opt_asig = asig;
+	}
 }

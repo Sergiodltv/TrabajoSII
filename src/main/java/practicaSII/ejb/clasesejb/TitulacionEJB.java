@@ -42,4 +42,13 @@ public class TitulacionEJB implements GestionTitulacion{
 		em.remove(titul);
 		
 	}
+	
+	@Override
+	public Titulacion obtenerTitulacionConCodigo(Integer codigo) throws TitulacionNoEncontradaException {
+		Titulacion titulEntity = em.find(Titulacion.class, codigo);
+		if (titulEntity != null) {
+			throw new TitulacionNoEncontradaException();
+		}
+		return titulEntity;
+	}
 }

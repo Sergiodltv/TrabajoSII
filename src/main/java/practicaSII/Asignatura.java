@@ -167,15 +167,19 @@ public class Asignatura implements Serializable {
 	public void setAsig_opt(Optativa asig_opt) {
 		this.asig_opt = asig_opt;
 	}
+	
+	public Titulacion getTitulacion() {
+		return as_titul;
+	}
+	
+	public void setTitulacion(Titulacion t) {
+		as_titul = t;
+	}
+	
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 
 	
-  	@Override
-	public boolean equals(Object obj) {
-		boolean esAsig = obj instanceof Asignatura;
-		Asignatura asig = (Asignatura)obj;
-		return esAsig && asig.getReferencia().equals(Referencia);
-	}
+   
 }
