@@ -58,8 +58,8 @@ public class SampleTest {
 	@Test
 	public void testInsertarAlumno() {
 		Alumno a1 = new Alumno();
-		a1.setID("1");
-		a1.setDNI("1234567A");
+		a1.setId(1);
+		a1.setDni("1234567A");
 		a1.setContrasenya("contraseña");
 		a1.setNombre("Paco");
 		a1.setApellido1("Jimenez");
@@ -71,8 +71,8 @@ public class SampleTest {
 		a1.setDireccion("dirección");
 		
 		Alumno a2 = new Alumno();
-		a2.setID("2");
-		a2.setDNI("2334567B");
+		a2.setId(2);
+		a2.setDni("2334567B");
 		a2.setContrasenya("contraseña2");
 		a2.setNombre("Luis");
 		a2.setApellido1("Gomez");

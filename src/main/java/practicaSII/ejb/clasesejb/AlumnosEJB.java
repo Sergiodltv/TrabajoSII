@@ -20,7 +20,7 @@ public class AlumnosEJB implements GestionAlumnos{
 	public void anadirAlumnoMatr(Alumno alm) throws AlumnoEncontradoException {
 		// TODO Auto-generated method stub
 		
-		Alumno alumnoExistente = em.find(Alumno.class, alm.getID());
+		Alumno alumnoExistente = em.find(Alumno.class, alm.getId());
 		if(alumnoExistente != null) {
 			throw new AlumnoEncontradoException();
 		}
@@ -33,7 +33,7 @@ public class AlumnosEJB implements GestionAlumnos{
 			throws AlumnoEncontradoException, ExpedienteEncontradoException {
 		// TODO Auto-generated method stub
 		
-		Alumno alumnoExistente = em.find(Alumno.class, alm.getID());
+		Alumno alumnoExistente = em.find(Alumno.class, alm.getId());
 		if(alumnoExistente != null) {
 			throw new AlumnoEncontradoException();
 		}
@@ -51,7 +51,7 @@ public class AlumnosEJB implements GestionAlumnos{
 	public void modificarAlumno(Alumno alm) throws AlumnoNoEncontradoException {
 		// TODO Auto-generated method stub
 		
-		Alumno alumnoEncontrado = em.find(Alumno.class, alm.getID());
+		Alumno alumnoEncontrado = em.find(Alumno.class, alm.getId());
 		if(alumnoEncontrado == null) {
 			throw new AlumnoNoEncontradoException();
 		}
@@ -63,7 +63,7 @@ public class AlumnosEJB implements GestionAlumnos{
 	public void eliminarAlumno(Alumno alm) throws AlumnoNoEncontradoException {
 		// TODO Auto-generated method stub
 		
-		Alumno alumnoEncontrado = em.find(Alumno.class, alm.getID());
+		Alumno alumnoEncontrado = em.find(Alumno.class, alm.getId());
 		if(alumnoEncontrado == null) {
 			throw new AlumnoNoEncontradoException();
 		}
@@ -73,10 +73,10 @@ public class AlumnosEJB implements GestionAlumnos{
 	}
 	
 	@Override
-	public Alumno obtenerAlumno(String ID) throws AlumnoNoEncontradoException {
+	public Alumno obtenerAlumno(String id) throws AlumnoNoEncontradoException {
 		// TODO Auto-generated method stub
 		
-		Alumno alumnoEncontrado = em.find(Alumno.class, ID);
+		Alumno alumnoEncontrado = em.find(Alumno.class, id);
 		if(alumnoEncontrado == null) {
 			throw new AlumnoNoEncontradoException();
 		}
