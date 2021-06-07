@@ -13,16 +13,16 @@
 
     <body>
         <div class="login-box">
-            <img class="avatar" src="img/logoUma.png" alt="logoUma"></img>
+            <h:graphicImage class="avatar" library="images" name="logoUma.png" />
             <h1>Iniciar sesión</h1>
             <h:form>
                 <h:outputLabel for="username" value="Identificación"/>
-                <h:inputText type="text" placeholder="Introduzca identificador" value="#{usuario.identificador}"/>
+                <h:inputText type="text" placeholder="Introduzca identificador"/>
 
                 <h:outputLabel for="password" value="Contraseña" />
-                <h:inputText type="password" placeholder="Introduzca contraseña" value="#{usuario.contrasena}"/>
+                <h:inputText type="password" placeholder="Introduzca contraseña" />
 
-                <h:commandButton type="submit" value="Acceder" action="#{usuario.acceder}"/>
+                <h:commandButton type="submit" value="Acceder" action="#{usuario.acceder}" />
 
                 <h:link outcome="registro.xhtml" value="No tengo una cuenta"/>
             </h:form>

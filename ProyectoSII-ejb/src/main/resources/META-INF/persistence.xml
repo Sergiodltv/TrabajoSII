@@ -15,6 +15,7 @@
 		<class>practicaSII.Pas</class>
 		<class>practicaSII.Titulacion</class>
 		<class>practicaSII.Asig_Matricula</class>
+		<class>practicaSII.Usuario</class>
 		<shared-cache-mode>NONE</shared-cache-mode>
 		<properties>
 		    <property name="javax.persistence.schema-generation.database.action" value="create"/>
