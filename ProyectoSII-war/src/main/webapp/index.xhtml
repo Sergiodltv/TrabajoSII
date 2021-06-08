@@ -16,15 +16,18 @@
             <h:graphicImage class="avatar" library="images" name="logoUma.png" />
             <h1>Iniciar sesión</h1>
             <h:form>
-                <h:outputLabel for="username" value="Identificación"/>
-                <h:inputText type="text" placeholder="Introduzca identificador"/>
+                <h:outputLabel for="username" value="Identificación" value="#{usuarioBeans.usuario.identificador}" />
+                <h:inputText type="text" />
 
-                <h:outputLabel for="password" value="Contraseña" />
-                <h:inputText type="password" placeholder="Introduzca contraseña" />
+                <h:outputLabel for="password" value="Contraseña" value="#{usuarioBeans.usuario.contrasenya}" />
+                <h:inputText type="password" />
 
-                <h:commandButton type="submit" value="Acceder" action="#{usuario.acceder}" />
-
+                <h:commandButton type="submit" value="Acceder" action="#{usuarioBeans.acceder}" />
+				
                 <h:link outcome="registro.xhtml" value="No tengo una cuenta"/>
+            	
+            	<h:messages style = "color:red;margin:8px;" />
+            	
             </h:form>
         </div>
         

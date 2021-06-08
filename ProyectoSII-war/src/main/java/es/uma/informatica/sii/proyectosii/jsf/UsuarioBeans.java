@@ -1,51 +1,57 @@
 package es.uma.informatica.sii.proyectosii.jsf;
 
-import javax.enterprise.context.RequestScoped;
+import java.io.Serializable;
+
+import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import practicaSII.ejb.clasesejb.AlumnosEJB;
-import practicaSII.ejb.clasesejb.UsuarioEJB;
+import practicaSII.Usuario;
+import practicaSII.ejb.clasesejb.GestionUsuario;
+import practicaSII.ejb.excetption.UsuarioIncorrectoException;
+
 
 @Named
-@RequestScoped
-public class UsuarioBeans{
+@SessionScoped
+public class UsuarioBeans implements Serializable{
 	
 	//@Inject
 	//private AlumnosEJB alumnoEJB;
 	
-	//@Inject 
-	//private UsuarioEJB usuarioEJB;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Inject 
+	private GestionUsuario usuarioEJB;
 	
-	private String ident;
-	private String doc;
-	private String contrasena;
+	private Usuario usuario;
 	
-	public String getIdent() {
-		return ident;
-	}
-	public void setIdent(String ident) {
-		this.ident = ident;
-	}
-	public String getDoc() {
-		return doc;
-	}
-	public void setDoc(String doc) {
-		this.doc = doc;
-	}
-	public String getContrasena() {
-		return contrasena;
-	}
-	public void setContrasena(String contrasena) {
-		this.contrasena = contrasena;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 	
-	public String registrar() {
-		return "vistaAlumno.xhtml";
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
-	public String acceder() {
-		return "vistaAlumno.xhtml";
+	public String acceder(){
+		String vista = "index.xhtml";
+		/*
+		try{
+			if (usuarioEJB.accederUsuario(usuario)) {
+				vista = "vistaAlumno.xhtml";
+			}
+			
+		}catch (UsuarioIncorrectoException e) {
+			 FacesMessage fm = new FacesMessage("Nombre de usuario o contraseña incorrectos");
+			 FacesContext.getCurrentInstance().addMessage("login:user", fm);
+		}
+		*/
+		return vista;
 	}
 	
 }

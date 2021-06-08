@@ -8,7 +8,7 @@ import practicaSII.Titulacion;
 import practicaSII.Usuario;
 import practicaSII.ejb.excetption.TitulacionEncontradaException;
 import practicaSII.ejb.excetption.UsuarioEncontradoException;
-import practicaSII.ejb.excetption.UsuarioNoEncontradoException;
+import practicaSII.ejb.excetption.UsuarioIncorrectoException;
 
 @Stateless
 public class UsuarioEJB implements GestionUsuario{
@@ -16,10 +16,10 @@ public class UsuarioEJB implements GestionUsuario{
 	private EntityManager em;
 	
 	@Override
-	public Usuario getUsuario(String identificador) throws UsuarioNoEncontradoException {
+	public Usuario getUsuario(String identificador) throws UsuarioIncorrectoException {
 		Usuario usuarioEntity = em.find(Usuario.class, identificador);
 		if (usuarioEntity == null) {
-			throw new UsuarioNoEncontradoException();
+			throw new UsuarioIncorrectoException();
 		}
 		return usuarioEntity;
 		
@@ -32,6 +32,18 @@ public class UsuarioEJB implements GestionUsuario{
 			throw new UsuarioEncontradoException();
 		}
 		em.persist(usuario);
-	}	
+	}
 
+	@Override
+	public boolean accederUsuario(Usuario usuario) throws UsuarioIncorrectoException{
+		Usuario usuarioEntity = em.find(Usuario.class, usuario.getDocumento());
+		if (usuarioEntity == null) {
+			throw new UsuarioIncorrectoException();
+		}
+		if(!usuarioEntity.equals(usuario)) {
+			throw new UsuarioIncorrectoException();
+		}
+		return true;
+	}	
+	
 }
